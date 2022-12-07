@@ -18,8 +18,8 @@ abstract contract StoryOracleClient {
         bytes32 indexed requestId, // unique id of the oracle request, story oracle backend would call back with id.
         address requester,  // address of smart contract which sending the oracle request
         address callbackAddr,  // address of smart contract which implemented the callback function
-        string url,  // url of the json file
-        string path  // path the locate content within the json file
+        string indexed url,  // url of the json file
+        string indexed path  // path the locate content within the json file
     );
 
     function buildOracleRequest(
