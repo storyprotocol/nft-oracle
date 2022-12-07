@@ -19,7 +19,7 @@ async function main() {
         console.log('log:', log)
         console.log('event:', event)
         try {
-            const tx = await contract.populateTransaction.fulfill(log.topics[1], hardcodedData)
+            const tx = await contract.populateTransaction.fulfill(log.topics[1], hardcodedData) // log.topics[1] contains the request id.
             await signer.sendTransaction(tx)
         } catch(e) {
             console.error('failed to send transaction back to the smart contract:', e)
